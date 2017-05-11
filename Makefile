@@ -6,7 +6,7 @@ OBJDIR = ./build
 SHELL = /bin/sh
 
 CC := mpicc
-CFLAGS := -Os -pedantic -D_XOPEN_SOURCE=700
+CFLAGS := -Os -pedantic -D_XOPEN_SOURCE=600
 
 XLKEY := xl
 ifeq ($(XLKEY),$(findstring $(XLKEY), $(shell $(CC) 2>&1)))
