@@ -1,12 +1,10 @@
-#define _XOPEN_SOURCE 700
-
 #include <mpi.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h> /*execv*/
+#include <string.h>
 #include <getopt.h>
 #include <stdbool.h>
-#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <wait.h>
 

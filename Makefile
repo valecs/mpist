@@ -1,23 +1,19 @@
-EXECUTABLE:=mpist
+EXECUTABLE := mpist
 
-SRCDIR=./src
-OBJDIR=./build
+SRCDIR = ./src
+OBJDIR = ./build
 
 SHELL = /bin/sh
 
-CFLAGS := -g -O2 -DHAVE_INLINE
-CFLAGS += -I$(HOME)/local/include -I$(CODEROOT)/include
-
-
 CC := mpicc
-# Use for GCC
-WARNINGS := -pedantic -Wall -W -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wnested-externs -Werror -Wuninitialized -Wconversion
-CFLAGS += $(WARNINGS)
-CFLAGS += -std=c99 -fshort-enums -fno-common
+CFLAGS := -Os -pedantic -D_XOPEN_SOURCE=700
 
-# Use for XL
-#CFLAGS += -qlanglvl=stdc99
-#LDFLAGS += -L/soft/apps/ibmcmp-feb2013/xlf/bg/14.1/bglib64 -lxlopt -lxl -lxlf90_r -lxlfmath
+XLKEY := xl
+ifeq ($(XLKEY),$(findstring $(XLKEY), $(shell $(CC) 2>&1)))
+	CFLAGS += -qlanglvl=stdc99
+else # Assume GCC or compatible
+	CFLAGS += -std=c99
+endif
 
 HEADERS := $(wildcard $(SRCDIR)/*.h)
 SOURCES := $(wildcard $(SRCDIR)/*.c) 
