@@ -14,7 +14,6 @@ CC := mpicc
 WARNINGS := -pedantic -Wall -W -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wnested-externs -Werror -Wuninitialized -Wconversion
 CFLAGS += $(WARNINGS)
 CFLAGS += -std=c99 -fshort-enums -fno-common
-LDFLAGS += -L/soft/apps/ibmcmp-feb2013/xlf/bg/14.1/bglib64 -lxlopt -lxl -lxlf90_r -lxlfmath
 
 # Use for XL
 #CFLAGS += -qlanglvl=stdc99
