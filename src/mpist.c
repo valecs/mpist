@@ -128,12 +128,6 @@ bool processOptions(int argc, char ** argv){
   return go;
 }
 
-  /* char * path; */
-  /* char ** args; */
-  /* char envvar[BUFLEN]; */
-  /* int n; */
-  /* int m; */
-
 void status(void){
   fprintf(stderr,"%s=[%d,%d] ", param.envvar, param.n, param.m);
   fprintf(stderr,"%s", param.path);
