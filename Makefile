@@ -8,12 +8,14 @@ SHELL = /bin/sh
 CC := mpicc
 CFLAGS := -Os -pedantic -D_XOPEN_SOURCE=600
 
-XLKEY := xl
-ifeq ($(XLKEY),$(findstring $(XLKEY), $(shell $(CC) 2>&1)))
+XLKEY := /wrappers/xl
+ifeq ($(XLKEY),$(findstring $(XLKEY), $(PATH)))
 	CFLAGS += -qlanglvl=stdc99
 else # Assume GCC or compatible
 	CFLAGS += -std=c99
 endif
+
+FOO := $(XLKEY)
 
 HEADERS := $(wildcard $(SRCDIR)/*.h)
 SOURCES := $(wildcard $(SRCDIR)/*.c) 
