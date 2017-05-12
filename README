@@ -18,4 +18,4 @@ A simple call to make and will produce the binary. If xl compilers are available
 EXAMPLES:
 
 One might submit a cobalt job with mpist as:
-% qsub -n 512 -t 20 mpist -G TASK_ID -t 1-8192 /path/to/my/single-thread/program [args...]
+% qsub -n 512 -t 20 mpist -C TASK_ID -t 1-8192 /path/to/my/single-thread/program [args...]
