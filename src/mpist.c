@@ -1,3 +1,5 @@
+#include "mpist.h"
+
 #include <mpi.h>
 #include <stdio.h>
 #include <string.h>
@@ -7,20 +9,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <wait.h>
-
-void help(char * pname);
-void status(void);
-bool processOptions(int argc, char ** argv);
-
-#define BUFLEN 128
-
-struct param_t{
-  char * path;         // executable
-  char ** args;        // its arguments
-  char envvar[BUFLEN]; // environmental variable of interest
-  int n;               // low range
-  int m;               // high range
-};
 
 /*
   Global struct holding parameters from the command line.
@@ -32,6 +20,7 @@ static struct param_t param = {
   .n = 0,
   .m = 0,
 };
+
 
 int main(int argc, char ** argv){
   bool go = processOptions(argc, argv);
