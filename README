@@ -1,4 +1,4 @@
-mpist: An MPI wrapper to allow the execution of many instances of a single-threaded program with a varrying envrionmental variable.
+mpist: An MPI wrapper to allow the execution of many instances of a single-threaded program with a varrying envrionmental variable. Requires the presence of execv() and fork() syscalls and so will not function in BlueGene environments.
 
 USAGE:
 mpist [-h] [-G] -C ENVVAR -t n-m EXE [ARGS]
