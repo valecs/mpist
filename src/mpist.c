@@ -116,6 +116,7 @@ bool processOptions(int argc, char ** argv){
     case '?':
       fprintf(stderr, "Option, -%c, is invalid. Exiting!\n", optopt);
       exit(-1);
+      break;
     default:
       fprintf(stderr, "Internal error. Exiting!\n");
       exit(-1);
