@@ -18,7 +18,7 @@ Notes:
 * The environmental variable, ENVVAR, must be shorter than 127 characters.
 
 ### Compiling
-A simple call to make and will produce the binary. If xl compilers are available, they will be used.
+A simple call to `make` will produce the binary. If xl compilers are available, they will be used.
 
 ### Example
 
