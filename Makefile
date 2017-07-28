@@ -10,7 +10,6 @@ OBJDIR = ./build
 SHELL = /bin/sh
 
 CC := mpicc
-export OMPI_CC=gcc-6.2
 CFLAGS := -g -Os -pedantic -D_XOPEN_SOURCE=600
 
 XLKEY := /wrappers/xl
