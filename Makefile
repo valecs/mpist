@@ -49,7 +49,7 @@ $(EXAMPLE): $(LIBRARY) $(EOBJECT)
 
 example: $(EXAMPLE)
 
-library: $(LIBDIR)/$(LIBRARY)
+library: $(LIBRARY)
 
 clean:
 	rm $(EXECUTABLE)        || true
