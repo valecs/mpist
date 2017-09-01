@@ -10,14 +10,11 @@ OBJDIR = ./build
 SHELL = /bin/sh
 
 CC := mpicc
-CFLAGS := -g -Os -pedantic -D_XOPEN_SOURCE=600
 
-XLKEY := /wrappers/xl
-ifeq ($(XLKEY),$(findstring $(XLKEY), $(PATH)))
-	CFLAGS += -qlanglvl=stdc99
-else # Assume GCC or compatible
-	CFLAGS += -std=c99 -Wall
-endif
+WARNINGS := -pedantic -Wall -W -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wnested-externs -Werror -Wuninitialized -Wconversion
+
+CFLAGS := -g -Os -pedantic -std=c99 -Wall -D_XOPEN_SOURCE=600
+CFLAGS += $(WARNINGS)
 
 LIBNAME := lib$(LIBRARY).a
 
