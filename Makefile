@@ -26,7 +26,7 @@ LOBJECT := $(patsubst $(LIBDIR)%.c,$(OBJDIR)%.o, $(LSOURCE))
 ESOURCE := $(wildcard $(EXADIR)/*.c) 
 EOBJECT := $(patsubst $(EXADIR)%.c,$(OBJDIR)%.o, $(ESOURCE))
 
-all: $(SOURCES) $(HEADERS) $(EXECUTABLE) library
+all: $(SOURCES) $(HEADERS) $(EXECUTABLE) library example
 
 
 $(OBJDIR)/%.o : */%.c
